@@ -59,7 +59,7 @@ function handleTweetBtnClick(){
 
     if(tweetInput.value){
         tweetsData.unshift({
-            handle: `@Scrimba`,
+            handle: `@New User`,
             profilePic: `images/avatar.png`,
             likes: 0,
             retweets: 0,
@@ -77,13 +77,9 @@ function handleTweetBtnClick(){
 }
 
 function handleDeleteClick(tweetId){
-    for (let tweet of tweetsData) {
-        if(tweet.uuid == tweetId){
-            
-        }
-    }
-    render();
-    }
+    tweetsData.splice(tweetsData.findIndex(({uuid}) => uuid == tweetId),1);
+    render()
+}
 
 function getFeedHtml(){
     let feedHtml = ``
@@ -132,7 +128,14 @@ function getFeedHtml(){
     <div class="tweet-inner">
         <img src="${tweet.profilePic}" class="profile-pic">
         <div>
+        <div class = "flex">
             <p class="handle">${tweet.handle}</p>
+            <span class=" ${deleteClass}">
+            <i class="fa-solid fa-close tweet-delete"
+            data-delete="${tweet.uuid}"
+            ></i>
+            </span>
+            </div> 
             <p class="tweet-text">${tweet.tweetText}</p>
             <div class="tweet-details">
                 <span class="tweet-detail">
@@ -152,11 +155,6 @@ function getFeedHtml(){
                     data-retweet="${tweet.uuid}"
                     ></i>
                     ${tweet.retweets}
-                </span>
-                <span class="tweet-delete ${deleteClass}">
-                    <i class="fa-solid fa-close"
-                    data-delete="${tweet.uuid}"
-                    ></i>
                 </span>
             </div>   
         </div>            

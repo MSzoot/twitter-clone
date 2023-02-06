@@ -107,7 +107,7 @@ button{
 }
 
 .tweet-delete{
- margin-left: 5px;
+color: red;
 }
 .handle{
     font-size: 12px;
@@ -133,4 +133,9 @@ button{
 /* utility */
 .hidden{
     display: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
 }
