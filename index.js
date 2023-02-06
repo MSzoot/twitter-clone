@@ -15,6 +15,8 @@ document.addEventListener('click', function(e){
         handleTweetBtnClick()
     }
     else if(e.target.dataset.delete){
+        handleDeleteClick(e.target.dataset.delete)
+        
     }
 })
  
@@ -74,9 +76,14 @@ function handleTweetBtnClick(){
 
 }
 
-function handleDeleteClick(){
-    console.log("works")
-}
+function handleDeleteClick(tweetId){
+    for (let tweet of tweetsData) {
+        if(tweet.uuid == tweetId){
+            
+        }
+    }
+    render();
+    }
 
 function getFeedHtml(){
     let feedHtml = ``
@@ -147,7 +154,7 @@ function getFeedHtml(){
                     ${tweet.retweets}
                 </span>
                 <span class="tweet-delete ${deleteClass}">
-                    <i class="fa-solid fa-close
+                    <i class="fa-solid fa-close"
                     data-delete="${tweet.uuid}"
                     ></i>
                 </span>
