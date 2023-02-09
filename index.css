@@ -56,7 +56,18 @@ textarea{
     height: 60px;
     width: 100%;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 15px;
+}
+
+.reply-text{
+    border: none;
+    resize: none;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    height: 30px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 10px;
 }
 
 button{
@@ -138,4 +149,11 @@ color: red;
 .flex {
     display: flex;
     justify-content: space-between;
+    border-top: none;
+}
+
+.send{
+   margin-top: 6px;
+   width: 80%;
+
 }

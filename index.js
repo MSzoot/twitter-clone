@@ -105,6 +105,18 @@ function getFeedHtml(){
         }
         
         let repliesHtml = ''
+
+        if(tweet.replies.length >= 0){
+            repliesHtml+=`<div class="tweet-reply flex">
+            <textarea class="reply-text" placeholder="Reply" id="reply-input"></textarea>
+            <span class="tweet-detail">
+                <i class="fa-regular fa-paper-plane send"
+                data-=""
+                ></i>
+            </span>
+            </div>`
+
+        }
         
         if(tweet.replies.length > 0){
             tweet.replies.forEach(function(reply){
@@ -121,6 +133,7 @@ function getFeedHtml(){
 `
             })
         }
+
         
           
         feedHtml += `
